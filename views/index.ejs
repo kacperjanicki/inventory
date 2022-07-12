@@ -1,4 +1,12 @@
-<% let header = items.length > 1 ? 'All results' : 'Result' %> <%= header %>:
+<% let header = items.length > 1 ? 'All results' : 'Result' %>
+<div class="header">
+    <span><%= header %></span>
+    <form action="/category/" method="GET">
+        <div class="search form-row">
+            <input type="text" dir="rtl" placeholder="Search by category" id="category" />
+        </div>
+    </form>
+</div>
 <div>
     <% items.forEach(item=>{ %>
     <div class="item-container">
@@ -8,12 +16,12 @@
             <div>Description: <%= item.description %></div>
             <div>Price : $<%= item.price %></div>
         </div>
-        <div>
+        <div class="btn-container">
             <% if(items.length>1){ %>
-            <a href="/item/<%= item.id %>">View</a>
+            <a href="/item/<%= item.id %>" class="btn btn-primary">View</a>
             <% } %>
 
-            <a href="/item/<%= item.id %>/edit">Edit</a>
+            <a href="/item/<%= item.id %>/edit" class="btn btn-primary">Edit</a>
             <%- include('./partials/delete',{id:item.id}) %>
         </div>
     </div>

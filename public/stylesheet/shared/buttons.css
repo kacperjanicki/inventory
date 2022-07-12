@@ -1,0 +1,29 @@
+.btn {
+    color: var(--btn-primary-text);
+    background: hsl(var(--color-base-hue), 100%, 83%);
+    cursor: pointer;
+    height: 2rem;
+    width: 4rem;
+    padding: 0.4rem 0.5rem;
+    margin-top: 1rem;
+    border-radius: 0.4rem;
+    border: 1px solid white;
+}
+.btn-danger {
+    background: var(--color-background-danger);
+    color: black;
+    font-family: "Gotham Rounded";
+}
+.btn-end {
+    justify-content: flex-end;
+}
+.btn-container {
+    margin-top: 1rem;
+}
+.btn-primary:hover {
+    color: var(--btn-primary-text-dark);
+    background: var(--btn-primary-bg-dark);
+}
+.btn-danger:hover {
+    background: var(--btn-danger-bg-dark);
+}

@@ -1,1 +1,48 @@
 @import "./shared/items.css";
+@import "./shared/fonts.css";
+@import "./shared/variables.css";
+@import "./shared/buttons.css";
+
+:root {
+    font-family: "Gotham Rounded";
+    color: var(--basic-text-color);
+}
+body {
+    background: linear-gradient(to left, var(--color-background-dark), var(--color-background-light));
+}
+.main-container {
+    max-width: 800px;
+    margin: auto;
+}
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+}
+body a,
+body button {
+    text-decoration: none;
+    color: var(--basic-text-color);
+}
+.error-message {
+    color: var(--btn-danger-bg-dark);
+    margin-left: 2rem;
+}
+.header {
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.search {
+    padding: 0;
+    margin: 0;
+}
+.search input {
+    border: none;
+    background: none;
+    color: var(--basic-text-color);
+    font-size: 1.5rem;
+}
+.search input:focus {
+    outline: none;
+}

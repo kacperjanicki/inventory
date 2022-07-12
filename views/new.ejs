@@ -1,22 +1,29 @@
 <%- include('./partials/errormsg') %> <% let actionstring %> <% type=='new' ? actionstring = '/item' :
 actionstring = `/item/${item.id}?method=PUT` %>
-
-<form action="<%= actionstring %>" method="POST">
-    <div>
-        <label for="name">Name: </label>
-        <input type="text" name="name" value="<%= item.name %>" />
-    </div>
-    <div>
-        <label for="category">Category: </label>
-        <input type="text" name="category" value="<%= item.category %>" />
-    </div>
-    <div id="description">
-        <label for="description">Description: </label>
-        <input type="text" name="description" value="<%= item.description || 'No description' %>" />
-    </div>
-    <div>
-        <label for="price">Price: </label>
-        <input type="number" min="1" name="price" value="<%= item.price %>" />
-    </div>
-    <button type="submit"><%= type=='new' ? 'Submit' : 'Update' %></button>
-</form>
+<div class="form">
+    <form action="<%= actionstring %>" method="POST">
+        <div class="form-row">
+            <div class="form-item">
+                <label for="name">Name: </label>
+                <input type="text" name="name" value="<%= item.name %>" />
+            </div>
+            <div class="form-item">
+                <label for="category">Category: </label>
+                <input type="text" name="category" value="<%= item.category %>" />
+            </div>
+        </div>
+        <div id="description" class="form-row">
+            <div class="form-item">
+                <label for="description">Description: </label>
+                <input type="text" name="description" value="<%= item.description || 'No description' %>" />
+            </div>
+            <div class="form-item">
+                <label for="price">Price: </label>
+                <input type="number" min="1" name="price" value="<%= item.price %>" />
+            </div>
+        </div>
+        <div class="form-row btn-end">
+            <button type="submit" class="btn btn-primary"><%= type=='new' ? 'Submit' : 'Update' %></button>
+        </div>
+    </form>
+</div>

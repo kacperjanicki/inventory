@@ -3,11 +3,12 @@
         <link rel="stylesheet" href="/stylesheet/main.css" />
     </head>
     <body>
-        <span style="display: flex; gap: 2rem">
-            <a href="/"><h1>Inventory</h1></a>
-            <a href="/item/new"><h1>New Item</h1></a>
-        </span>
-
-        <%- body %>
+        <div class="main-container">
+            <div class="navbar">
+                <a href="/"><h1>Inventory</h1></a>
+                <a href="/item/new"><h1>New Item</h1></a>
+            </div>
+            <%- body %>
+        </div>
     </body>
 </html>

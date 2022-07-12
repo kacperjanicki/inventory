@@ -1,6 +1,25 @@
 .item-container {
     margin-bottom: 2rem;
 }
+.form-row input {
+    font-family: "Gotham Rounded";
+    height: 2rem;
+    padding: 0.4rem 0.25rem;
+}
+
 .item-container:first-child {
-    margin-top: 2rem;
+    margin-top: 1rem;
+}
+
+.form-row {
+    margin-top: 1rem;
+    display: flex;
+}
+.form-item {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    font-size: 1.4rem;
+    flex-grow: 1;
+    flex-basis: 0;
 }

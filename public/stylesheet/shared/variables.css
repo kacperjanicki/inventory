@@ -1,0 +1,11 @@
+:root {
+    --color-base-hue: 210;
+    --basic-text-color: hsl(var(--color-base-hue), 100%, 50%);
+    --color-background-dark: hsl(var(--color-base-hue), 100%, 8%);
+    --color-background-light: hsl(var(--color-base-hue), 100%, 22%);
+    --color-background-danger: hsl(3, 100%, 65%);
+    --btn-primary-text: hsl(var(--color-base-hue), 100%, 20%);
+    --btn-primary-text-dark: hsl(var(--color-base-hue), 100%, 10%);
+    --btn-primary-bg-dark: hsl(var(--color-base-hue), 100%, 95%);
+    --btn-danger-bg-dark: hsl(3, 100%, 55%);
+}

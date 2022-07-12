@@ -24,8 +24,8 @@ router.delete("/:id", async (req, res) => {
 });
 
 router.post("/:id", async (req, res) => {
+    const item = await Item.findById(req.params.id);
     try {
-        const item = await Item.findById(req.params.id);
         item.price = req.body.price;
         item.name = req.body.name;
         item.description = req.body.description;
@@ -33,7 +33,7 @@ router.post("/:id", async (req, res) => {
         await item.save();
         res.redirect(`/item/${item.id}`);
     } catch {
-        res.render("new", { item: item, errorMessage: "Error updating item" });
+        res.render("new", { item: item, errorMessage: "Error updating item", type: "new" });
     }
 });
 
@@ -49,7 +49,7 @@ router.post("/", async (req, res) => {
         const newItem = await item.save();
         res.redirect("/");
     } catch {
-        res.render("new", { item: item, errorMessage: "Error with adding item" });
+        res.render("new", { item: item, errorMessage: "Error with adding item", type: "new" });
     }
 });
 
