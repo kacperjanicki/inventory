@@ -1,0 +1,22 @@
+<% let header = items.length > 1 ? 'All results' : 'Result' %> <%= header %>:
+<div>
+    <% items.forEach(item=>{ %>
+    <div class="item-container">
+        <div>
+            <div>Name: <%= item.name %></div>
+            <div>Category: <%= item.category %></div>
+            <div>Description: <%= item.description %></div>
+            <div>Price : $<%= item.price %></div>
+        </div>
+        <div>
+            <% if(items.length>1){ %>
+            <a href="/item/<%= item.id %>">View</a>
+            <% } %>
+
+            <a href="/item/<%= item.id %>/edit">Edit</a>
+            <%- include('./partials/delete',{id:item.id}) %>
+        </div>
+    </div>
+
+    <% }) %>
+</div>

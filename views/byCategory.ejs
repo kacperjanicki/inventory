@@ -1,0 +1,5 @@
+<h1>Category name: <%= name %></h1>
+
+<% if(items.length>0){%> <% items.forEach(item=>{%>
+<div><%= item.price %></div>
+<% }) %> <% }else{ %> no results <% } %>
