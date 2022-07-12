@@ -30,4 +30,9 @@ db.once("open", () => console.log("connected to mongoose"));
 app.use("/", indexRouter);
 app.use("/item", itemRouter);
 
+app.get("/category", (req, res) => {
+    console.log(req.query.category);
+    res.redirect(`/category/${req.query.category}`);
+});
+
 app.listen(process.env.PORT || 3005);

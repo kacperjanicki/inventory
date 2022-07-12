@@ -1,5 +1,21 @@
 <h1>Category name: <%= name %></h1>
 
-<% if(items.length>0){%> <% items.forEach(item=>{%>
-<div><%= item.price %></div>
+<% if(items.length>0){%> <% items.forEach(item=>{ %>
+<div class="item-container">
+    <div>
+        <div><span class="show-label">Name:</span> <%= item.name %></div>
+        <div><span class="show-label">Category:</span> <%= item.category %></div>
+        <div><span class="show-label">Description:</span> <%= item.description %></div>
+        <div><span class="show-label">Price:</span> $<%= item.price %></div>
+    </div>
+    <div class="btn-container">
+        <% if(items.length>1){ %>
+        <a href="/item/<%= item.id %>" class="btn btn-primary">View</a>
+        <% } %>
+
+        <a href="/item/<%= item.id %>/edit" class="btn btn-primary">Edit</a>
+        <%- include('./partials/delete',{id:item.id}) %>
+    </div>
+</div>
+
 <% }) %> <% }else{ %> no results <% } %>

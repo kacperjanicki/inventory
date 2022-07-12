@@ -1,20 +1,25 @@
 <% let header = items.length > 1 ? 'All results' : 'Result' %>
+
 <div class="header">
     <span><%= header %></span>
-    <form action="/category/" method="GET">
+    <form action="/category" method="GET">
         <div class="search form-row">
-            <input type="text" dir="rtl" placeholder="Search by category" id="category" />
+            <input type="text" dir="rtl" placeholder="Search by category" name="category" value="" />
+        </div>
+        <div class="category-list">
+            <div style="margin-bottom: 0.2rem; margin-top: 0.2rem">Available categories:</div>
+            <%- include('./partials/categorylist',{categorylist:categorylist}) %>
         </div>
     </form>
 </div>
-<div>
+<div class="container">
     <% items.forEach(item=>{ %>
     <div class="item-container">
         <div>
-            <div>Name: <%= item.name %></div>
-            <div>Category: <%= item.category %></div>
-            <div>Description: <%= item.description %></div>
-            <div>Price : $<%= item.price %></div>
+            <div><span class="show-label">Name:</span> <%= item.name %></div>
+            <div><span class="show-label">Category:</span> <%= item.category %></div>
+            <div><span class="show-label">Description:</span> <%= item.description %></div>
+            <div><span class="show-label">Price:</span> $<%= item.price %></div>
         </div>
         <div class="btn-container">
             <% if(items.length>1){ %>

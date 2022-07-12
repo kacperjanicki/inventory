@@ -16,8 +16,13 @@ body {
 }
 .navbar {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    gap: 2rem;
 }
+.navbar a:hover {
+    color: hsl(var(--color-base-hue), 100%, 40%);
+}
+
 body a,
 body button {
     text-decoration: none;
@@ -45,4 +50,17 @@ body button {
 }
 .search input:focus {
     outline: none;
+}
+.show-label {
+    font-weight: bold;
+}
+.category-list {
+    position: relative;
+    top: 3px;
+    margin-bottom: -3px;
+}
+.category-list > div {
+    text-align: right;
+    opacity: 0.8;
+    font-size: 1rem;
 }
