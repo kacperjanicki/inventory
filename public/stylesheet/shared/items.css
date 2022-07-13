@@ -16,6 +16,13 @@
     height: 2rem;
     padding: 0.4rem 0.25rem;
 }
+.form-item select,
+input {
+    font-family: "Gotham Rounded";
+    height: 2rem;
+    padding: 0.4rem 0.25rem;
+    width: 100%;
+}
 
 .item-container:first-child {
     margin-top: 1rem;

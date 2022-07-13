@@ -9,7 +9,15 @@ actionstring = `/item/${item.id}?method=PUT` %>
             </div>
             <div class="form-item">
                 <label for="category">Category: </label>
-                <input type="text" name="category" value="<%= item.category %>" />
+                <div>
+                    <!-- <select name="category">
+                        <% categorylist.forEach(category=>{ %>
+                        <option label="<%= category %>" value="<%= category %>"><%= category %></option>
+                        <% }) %>
+                    </select> -->
+
+                    <input type="text" name="category" />
+                </div>
             </div>
         </div>
         <div id="description" class="form-row">

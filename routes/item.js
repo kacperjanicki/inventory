@@ -3,8 +3,16 @@ const express = require("express");
 const router = express.Router();
 const Item = require("../models/item");
 
-router.get("/new", (req, res) => {
-    res.render("new", { item: new Item(), type: "new" });
+router.get("/new", async (req, res) => {
+    var filteredlist = [];
+    const categorylist = await Item.find({}, { category: 1, _id: 0 });
+    categorylist.map((item) => {
+        if (!filteredlist.includes(item.category)) {
+            filteredlist.push(item.category);
+        }
+    });
+
+    res.render("new", { item: new Item(), type: "new", categorylist: filteredlist });
 });
 
 router.get("/:id/edit", async (req, res) => {
